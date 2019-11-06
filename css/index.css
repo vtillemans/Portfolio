@@ -1,3 +1,21 @@
+.headingFont {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  text-align: center;
+  padding: 2%;
+}
+.subHeadingFont {
+  font-size: 2rem;
+  color: #cc005f;
+  padding: 1%;
+  text-align: center;
+}
+.cardStyles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -130,6 +148,11 @@ table {
 * {
   box-sizing: border-box;
 }
+#container {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+}
 html,
 body {
   height: 100%;
@@ -170,94 +193,83 @@ nav a:hover {
 .banner-image {
   width: 100%;
 }
-.hello-world {
-  position: absolute;
-  z-index: 999;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 40%;
-  text-align: center;
-  width: 60%;
-}
-.hello-world h5 {
-  font-size: 6rem;
-  color: #cc005f;
-  padding: 1%;
-}
-.hello-world h1 {
-  font-size: 8rem;
-  color: #fff;
-  font-weight: bold;
-  padding: 2%;
-}
-.title {
-  font-size: 4rem;
-  color: pink;
-  padding: 2%;
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Dancing Script Regular'), local('DancingScript-Regular'), url(https://fonts.gstatic.com/s/dancingscript/v11/If2RXTr6YS-zF4S-kcSWSVi_szLgiuQ.ttf) format('truetype');
 }
 .top-about-column h1 {
+  font-family: 'Dancing Script', cursive;
   font-size: 4rem;
-  font-weight: bold;
   text-align: center;
   padding: 2%;
 }
 .intro-info {
   display: flex;
 }
+@media (max-width: 896px) {
+  .intro-info {
+    flex-direction: column;
+  }
+}
 .lead {
   font-size: 2rem;
-  padding: 5%;
+  padding: 6%;
 }
 .profile-image {
   border-radius: 50%;
-  width: 10%;
+  width: 15%;
   margin: 2%;
 }
+@media (max-width: 1180px) {
+  .profile-image {
+    width: 17%;
+  }
+}
+@media (max-width: 1002px) {
+  .profile-image {
+    width: 20%;
+  }
+}
+@media (max-width: 898px) {
+  .profile-image {
+    width: 25%;
+  }
+}
+@media (max-width: 896px) {
+  .profile-image {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .resume-div h5 {
+  font-family: 'Dancing Script', cursive;
   font-size: 4rem;
-  font-weight: bold;
   text-align: center;
   padding: 2%;
 }
-.experience {
-  padding: 2%;
-}
-.experience h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 2%;
-}
-.experience-area {
-  display: flex;
-}
-.education-title {
-  padding: 2%;
-}
-.education-title h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 2%;
-}
-.grey-section {
+.pink-section {
   background: pink;
 }
-.job-description h4 {
-  font-size: 2rem;
-  color: #cc005f;
-  padding: 1%;
+.list {
+  list-style-image: url(../images/heart.png);
+  padding-left: 10%;
+  padding-bottom: 15px;
 }
-.education-info h4 {
-  font-size: 2rem;
-  color: #cc005f;
-  padding: 1%;
+.list li {
+  margin-bottom: 15px;
+  font-size: 20px;
 }
-.education-info {
-  padding: 2%;
+.list-area {
+  display: flex;
 }
 .portfolio-div h5 {
+  font-family: 'Dancing Script', cursive;
   font-size: 4rem;
-  font-weight: bold;
   text-align: center;
   padding: 2%;
 }
@@ -267,29 +279,82 @@ nav a:hover {
   padding: 1%;
   text-align: center;
 }
-.button {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  border: 2px solid pink;
-  color: black;
-  margin: 0 10px 20px;
-  cursor: pointer;
-  width: 200px;
-  height: 45px;
-  font-size: 2rem;
-  border-radius: 10px;
-  padding-top: 5px;
-}
-.button a:hover {
-  color: white;
-  background: #cc005f;
-}
-.button-cont {
+.maincontainer {
+  width: 425px;
+  height: 500px;
+  margin: 15px;
+  padding-bottom: 1rem;
   display: flex;
+  justify-content: space-between;
+}
+.card {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.8s ease-in;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  border: 2px dashed pink;
+}
+.front img {
+  height: 100%;
+}
+.back h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  text-align: center;
+  padding: 2%;
+  color: #cc005f;
+}
+.back p {
+  padding: 20px;
+  font-size: 20px;
+}
+.links {
+  margin: 20px 0;
+}
+.links a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
   justify-content: center;
   align-items: center;
+  color: #cc005f;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.links a:hover {
+  background: white;
+  color: pink;
+}
+.contact-div h5 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  text-align: center;
   padding: 2%;
+}
+.contact-div h1 {
+  font-size: 2rem;
+  color: #cc005f;
+  padding: 1%;
+  text-align: center;
 }
 footer {
   text-align: center;

@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -53,6 +56,12 @@ table {
     box-sizing: border-box;
 }
 
+#container {
+	max-width: 1400px;
+	width: 100%;
+	margin: auto;  
+  }
+
 html, body {
     height: 100%;
 }
@@ -64,7 +73,7 @@ body {
 ///////////////////* NAV MENU SYTLES *////////////////////////////
 
 nav {
-	background: #333;
+	background: @navgray;
 }
 nav ul {
 	list-style: none;
@@ -73,7 +82,7 @@ nav ul {
 nav a {
 	text-decoration: none;
 	text-align: center;
-	color: pink;
+	color: @pink;
 	display: block;
 	padding: 2%;
 	margin: 4%;
@@ -81,7 +90,7 @@ nav a {
 }
 
 nav a:hover {
-	background-color: #555;
+	background-color: @hovergray;
 }
 
 @media (min-width: 768px) {
@@ -102,159 +111,193 @@ nav a:hover {
 	width: 100%;
 }
 
-.hello-world {
-	position: absolute;
-	z-index: 999;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-	top: 40%;
-	text-align: center;
-	width: 60%;
-}
-
-.hello-world h5 {
-	font-size: 6rem;
-	color: #cc005f;
-	padding: 1%;
-}
-
-.hello-world h1 {
-	font-size: 8rem;
-	color: #fff;
-	font-weight: bold;
-	padding: 2%;
-}
-
-.title {
-	font-size: 4rem;
-	color: pink;
-	padding: 2%;
-}
 
 ///////////////////////////////////* ABOUT STYLES *//////////////////////////////////////
 
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+
 .top-about-column h1 {
-	font-size: 4rem;
-	font-weight: bold;
-	text-align: center;
-	padding: 2%;
+	.headingFont();
 }
 
 .intro-info {
 	display: flex;
+	@media (max-width: 896px) {
+		flex-direction: column;
+	}
 }
+
+
 
 .lead {
 	font-size: 2rem;
-	padding: 5%;
+	padding: 6%;
 }
 
 .profile-image {
 	border-radius: 50%;
-	width: 10%;
+	width: 15%;
 	margin: 2%;
+	@media (max-width: 1180px) {
+		width: 17%;
+	}
+	@media (max-width: 1002px) {
+		width: 20%;
+	}
+	@media (max-width: 898px) {
+		width: 25%;
+	}
+	@media (max-width: 896px) {
+		width: 30%;
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+  	
+	}
 }
 
-/////////////////////////////////////////////* RESUME STYLES */////////////////////////////////////////////
+/////////////////////////////////////////////* SKILLS STYLES */////////////////////////////////////////////
 
 .resume-div h5 {
-	font-size: 4rem;
-	font-weight: bold;
-	text-align: center;
-	padding: 2%;
-}
-.experience {
-	padding: 2%;
+	.headingFont();
 }
 
-.experience h2 {
-	font-size: 2rem;
-	font-weight: bold;
-	padding: 2%;
+.pink-section {
+	background: @pink;
 }
 
-.experience-area {
+.list {
+	list-style-image: url(../images/heart.png);
+	padding-left: 10%;
+	padding-bottom: 15px;
+}
+
+.list li {
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+.list-area {
 	display: flex;
-}
-
-.education-title {
-	padding: 2%;
-}
-
-.education-title h2 {
-	font-size: 2rem;
-	font-weight: bold;
-	padding: 2%;
-}
-
-.grey-section {
-	background: pink;
-}
-
-.job-description h4 {
-	font-size: 2rem;
-	color: #cc005f;
-	padding: 1%;
-}
-
-.education-info h4 {
-	font-size: 2rem;
-	color: #cc005f;
-	padding: 1%;
-}
-
-.education-info {
-	padding: 2%;
 }
 
 //////////////////////////////////////////////* PORTFOLIO STYLES *///////////////////////////////////////////////
 
 .portfolio-div h5 {
-	font-size: 4rem;
-	font-weight: bold;
-	text-align: center;
-	padding: 2%;
+	.headingFont();
 }
 
 .portfolio-div h1 {
-	font-size: 2rem;
-	color: #cc005f;
-	padding: 1%;
-	text-align: center;
+	.subHeadingFont();
 }
 
-.button {
-display: block;
-text-align: center;
-text-decoration: none;
- border: 2px solid pink;
- color: black;
- margin: 0 10px 20px;
- cursor: pointer;
- width: 200px;
- height: 45px;
- font-size: 2rem;
- border-radius: 10px;
- padding-top: 5px;
-}
+// .button {
+// display: block;
+// text-align: center;
+// text-decoration: none;
+//  border: 2px solid pink;
+//  color: black;
+//  margin: 0 10px 20px;
+//  cursor: pointer;
+//  width: 200px;
+//  height: 45px;
+//  font-size: 2rem;
+//  border-radius: 10px;
+//  padding-top: 5px;
+// }
 
-.button a:hover {
-	color: white;
-	background: #cc005f;
-}
+// .button a:hover {
+// 	color: white;
+// 	background: #cc005f;
+// }
 
-.button-cont {
+// .button-cont {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	padding: 2%;
+// }
+
+
+.maincontainer {
+	width: 425px;
+	height: 500px;
+	//perspective: 500px;
+	margin: 15px;
+	padding-bottom: 1rem;
 	display: flex;
+	justify-content: space-between;
+}
+.card{
+	cursor: pointer;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 0.8s ease-in;
+	
+}
+
+.card:hover {
+	transform: rotateY(180deg);
+}
+.front{
+	.cardStyles();
+}
+.back{
+	.cardStyles();
+	transform: rotateY(180deg);
+	border: 2px dashed @pink;
+}
+.front img{
+	height: 100%;
+}
+.back h2{
+	font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+	text-align: center;
+	padding: 2%;
+	color: @hotpink;
+}
+.back p{
+	padding: 20px;
+	font-size: 20px;
+}
+.links {
+	margin: 20px 0;
+}
+.links a {
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
 	justify-content: center;
 	align-items: center;
-	padding: 2%;
+	color: @hotpink;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 50%;
 }
+.links a:hover {
+	background: white;
+	color: @pink;
+}
+
+
+///////////////////////////////////////////////////////* CONTACT STYLES *///////////////////////////////////////////
+.contact-div h5 {
+	.headingFont();
+}
+
+.contact-div h1 {
+	.subHeadingFont();
+}
+
 
 ///////////////////////////////////////////////////////* FOOTER STYLES *///////////////////////////////////////////
 
 footer {
 	text-align: center;
 	padding: 2%;
-	background: lightgray;
+	background: @footergray;
 }
