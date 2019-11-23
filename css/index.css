@@ -284,10 +284,6 @@ nav a:hover {
 
 /* ///////////////// PORTFOLIO STYLES ///////////////////////////////// */
 
-.portfolio-div {
-  width: 100%;
-}
-
 .portfolio-div h5 {
   font-family: "Dancing Script", cursive;
   font-size: 4rem;
@@ -307,6 +303,12 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1297px) {
+  .maincontainer {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
 
 .card {
   cursor: pointer;
@@ -315,6 +317,11 @@ nav a:hover {
   height: 500px;
   transform-style: preserve-3d;
   transition: 0.8s ease-in;
+}
+@media (max-width: 1297px) {
+  .card {
+    margin-bottom: 20px;
+  }
 }
 .card:hover {
   transform: rotateY(180deg);
