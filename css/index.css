@@ -1,5 +1,5 @@
 .headingFont {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   text-align: center;
   padding: 2%;
@@ -137,7 +137,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -160,6 +160,9 @@ body {
 body {
   margin: 0;
 }
+
+/* ///////////////// NAV MENU STYLES ///////////////////////////////// */
+
 nav {
   background: #333;
 }
@@ -187,21 +190,29 @@ nav a:hover {
     flex: 1 1 0;
   }
 }
+
+/* ///////////////// BANNER STYLES ///////////////////////////////// */
+
 .banner {
   position: relative;
 }
 .banner-image {
   width: 100%;
 }
+
+/* ///////////////// ABOUT STYLES ///////////////////////////////// */
+
 @font-face {
-  font-family: 'Dancing Script';
+  font-family: "Dancing Script";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Dancing Script Regular'), local('DancingScript-Regular'), url(https://fonts.gstatic.com/s/dancingscript/v11/If2RXTr6YS-zF4S-kcSWSVi_szLgiuQ.ttf) format('truetype');
+  src: local("Dancing Script Regular"), local("DancingScript-Regular"),
+    url(https://fonts.gstatic.com/s/dancingscript/v11/If2RXTr6YS-zF4S-kcSWSVi_szLgiuQ.ttf)
+      format("truetype");
 }
 .top-about-column h1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   text-align: center;
   padding: 2%;
@@ -246,8 +257,11 @@ nav a:hover {
     margin-right: auto;
   }
 }
+
+/* ///////////////// SKILLS STYLES ///////////////////////////////// */
+
 .resume-div h5 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   text-align: center;
   padding: 2%;
@@ -267,8 +281,15 @@ nav a:hover {
 .list-area {
   display: flex;
 }
+
+/* ///////////////// PORTFOLIO STYLES ///////////////////////////////// */
+
+.portfolio-div {
+  width: 100%;
+}
+
 .portfolio-div h5 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   text-align: center;
   padding: 2%;
@@ -280,18 +301,18 @@ nav a:hover {
   text-align: center;
 }
 .maincontainer {
-  width: 425px;
-  height: 500px;
+  width: 100%;
   margin: 15px;
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }
+
 .card {
   cursor: pointer;
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 425px;
+  height: 500px;
   transform-style: preserve-3d;
   transition: 0.8s ease-in;
 }
@@ -316,7 +337,7 @@ nav a:hover {
   height: 100%;
 }
 .back h2 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 2rem;
   text-align: center;
   padding: 2%;
@@ -326,8 +347,13 @@ nav a:hover {
   padding: 20px;
   font-size: 20px;
 }
+
+/* ///////////////// ICON STYLES ///////////////////////////////// */
+
 .links {
   margin: 20px 0;
+  width: 100%;
+  text-align: center;
 }
 .links a {
   display: inline-flex;
@@ -344,8 +370,11 @@ nav a:hover {
   background: white;
   color: pink;
 }
+
+/* ///////////////// CONTACT STYLES ///////////////////////////////// */
+
 .contact-div h5 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
   text-align: center;
   padding: 2%;
@@ -356,6 +385,9 @@ nav a:hover {
   padding: 1%;
   text-align: center;
 }
+
+/* ///////////////// FOOTER STYLES ///////////////////////////////// */
+
 footer {
   text-align: center;
   padding: 2%;
